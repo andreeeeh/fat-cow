@@ -2,7 +2,13 @@
 
 export default (sequelize, DataTypes) => {
     const Result = sequelize.define('Result', {
-        name: {
+        clientId: {
+            type: DataTypes.INTEGER,
+            allowNull: false, references: {
+                model: 'Clients', // name of your Client model
+                key: 'id',
+            },
+        }, name: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -98,5 +104,6 @@ export default (sequelize, DataTypes) => {
             allowNull: false
         },
     });
+
     return Result;
 }

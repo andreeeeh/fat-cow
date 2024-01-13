@@ -1,0 +1,58 @@
+<form (ngSubmit)="onSubmit()" #nutriForm="ngForm">
+    <div *ngIf="clients" class="form-group">
+        <!-- <label for="clientId"></label> -->
+        <select class="form-control" id="clientId" [(ngModel)]="model.clientId" name="clientId" required>
+            <option *ngFor="let client of clients" [value]="client.id">{{client.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="product">Product: </label>
+        <select class="form-control" id="prodId" [(ngModel)]="model.prodId" name="prodId" required>
+            <option *ngFor="let prod of product" [value]="prod.prodId">{{prod.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Season: </label>
+        <div>
+            <input type="radio" id="wet" [(ngModel)]="model.season" value="wet" name="wet">
+            <label for="wet">Wet</label>
+        </div>
+        <div>
+            <input type="radio" id="dry" [(ngModel)]="model.season" value="dry" name="dry">
+            <label for="dry">Dry</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="period">Period: </label>
+        <input type="number" class="form-control" id="period" [(ngModel)]="model.period" name="period" #period="ngModel"
+            required>
+        <div *ngIf="period.invalid && (period.dirty || period.touched)" class="alert alert-danger">
+            <div *ngIf="period.errors?.['required']">Period is required</div>
+        </div>
+        <!-- <div [hidden]="period.valid || period.pristine" class="alert alert-danger">
+            Period is required
+        </div> -->
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity of Animals: </label>
+        <input type="number" class="form-control" id="quantity" [(ngModel)]="model.quantity" name="quantity" required>
+    </div>
+    <div class="form-group">
+        <label for="initialWeight">Initial Weight (per Animal): </label>
+        <input type="number" class="form-control" id="initialWeight" [(ngModel)]="model.initialWeight"
+            name="initialWeight" required>
+    </div>
+    <div class="form-group">
+        <label for="priceProduct">Price (per Sack): </label>
+        <input type="number" class="form-control" id="priceProduct" [(ngModel)]="model.priceProduct" name="priceProduct"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="priceWeight">Animal Sale Price (per Weight): </label>
+        <input type="number" class="form-control" id="priceProduct" [(ngModel)]="model.priceWeight" name="priceWeight"
+            required>
+    </div>
+
+    <button type="submit" class="btn btn-default" [disabled]="!nutriForm.valid">Submit</button>
+</form>
+<app-result></app-result>

@@ -2,8 +2,9 @@ import { Product } from "./product";
 
 export class InfoAnimal {
     constructor(
+        public clientId: number | null,
         public name: string,
-        public id: number | null,
+        public prodId: number | null,
         public season: string,
         public period: number | null,
         public quantity: number | null,

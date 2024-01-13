@@ -1,8 +1,9 @@
 <div *ngIf="result">
     <h1>Result:</h1>
     <div><span>Product: </span>{{result.name}} ({{result.prodId}})</div>
-    <div><span>Season: </span>{{result.season}} Kg</div>
+    <div><span></span>{{result.season}} Season</div>
     <div><span>Quantity:</span>{{result.quantity}} packs</div>
     <div><span>Initial Weight: </span>{{result.initialWeight}} Kg</div>
-    <div><span>Animal Price per Weight: </span>R$ {{result.periodTotalPack}}</div>
+    <div><span>Animal Price per Weight: </span>R$ {{result.periodTotalWeight}}</div>
+    <div><span>Animal Price per Pack: </span>R$ {{result.periodTotalPack}}</div>
 </div>

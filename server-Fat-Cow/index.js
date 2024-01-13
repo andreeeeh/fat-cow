@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import config from './config.js';
+import conf from './config.js';
 import router from './router.js';
 import db from './models/index.js'
 
@@ -11,7 +11,7 @@ app.use(cors());
 app.use(router);
 
 (async () => {
-    await db.sequelize.sync({ alter: true })
-    app.listen(config.port, () =>
-        console.log(`server running 🏃‍♂️: http://localhost:${config.port}`))
+    // await db.sequelize.sync({ alter: true })
+    app.listen(conf.port, () =>
+        console.log(`server running 🏃‍♂️: http://localhost:${conf.port}`))
 })()

@@ -1,5 +1,7 @@
 export class Result {
     constructor(
+        public id: number,
+        public clientId: number,
         public name: number,
         public prodId: number,
         public season: number,

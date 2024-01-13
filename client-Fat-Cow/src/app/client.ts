@@ -1,6 +1,6 @@
-export class Product {
+export class Client {
     constructor(
-        public prodId: number,
+        public id: number,
         public name: string,
     ) { }
 }
