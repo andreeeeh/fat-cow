@@ -1,0 +1,45 @@
+# Dependency directories
+/client-Fat-Cow/node_modules
+/server-Fat-Cow/node_modules
+
+# Environment variables
+.env
+
+# Build output
+dist
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode
+.idea
+
+# files
+/server-Fat-Cow/config.js
+
+# Environment variables
+.env
+
+# Build output
+dist
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode
+.idea
+
+# files
+node_modules
