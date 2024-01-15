@@ -29,23 +29,8 @@ const result = function (info) {
     const periodRecommendation = dailyRecommendation * 3.5
     const estimatedProfitPerHead = estimatedWeightGain / 30 * info.priceWeight
     const estimatedProfitTotal = estimatedProfitPerHead * info.quantity;
-
-    // DWG = +(DWG.toFixed(2))
-    // dailyPerHeadWeight = (info.initialWeight + ((info.period * DWG) / 2)) * 0.001;
-    // dailyTotalWeight = dailyPerHeadWeight * info.quantity;
-    // dailyTotalPack = dailyTotalWeight / 30;
-    // periodTotalWeight = dailyTotalWeight * info.period;
-    // periodTotalPack = periodTotalWeight / 30;
-    // dailyCost = info.priceProduct * dailyTotalPack;
-    // monthlyCost = dailyCost * 30;
-    // periodCost = dailyCost * info.period;
-    // monthlyWeightGain = DWG * 30;
-    // estimatedWeightGain = monthlyWeightGain * info.period / 30
-    // finalWeight = estimatedWeightGain + info.initialWeight;
-    // dailyRecommendation = dailyTotalPack
-    // periodRecommendation = dailyRecommendation * 3.5
-    // estimatedProfitPerHead = estimatedWeightGain / 30 * info.priceWeight
-    // estimatedProfitTotal
+    const notifyClient = false;
+    const expired = false;
 
     return {
         clientId: info.clientId,

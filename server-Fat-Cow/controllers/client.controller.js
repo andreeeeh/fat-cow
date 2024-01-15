@@ -1,5 +1,4 @@
 import db from "../models/index.js";
-import { result } from "./util.controller.js"
 
 
 export async function getResultsByClient (req, res) {
@@ -19,11 +18,12 @@ export async function getResultsByClient (req, res) {
     }
 }
 
-export async function addOneClient (req, res) {
+export async function addClient (req, res) {
     try {
-        let info = await req.body;
-        await db.Client.create(info)
-        res.status(201).json({ message: 'created' })
+        let client = req.body;
+        console.log(client)
+        let newClient = await db.Client.create(client)
+        res.status(201).send(newClient)
     } catch (err) {
         console.log(err)
         res.status(400).json({ message: 'error' });
@@ -38,6 +38,16 @@ export async function getAllClientsResults (req, res) {
                 as: 'Result'
             }]
         });
+        res.status(200).json(allClients);
+    } catch (err) {
+        console.log(err);
+        res.status(400).json({ message: 'error' });
+    }
+}
+
+export async function getOnlyClients (req, res) {
+    try {
+        let allClients = await db.Client.findAll();
         res.status(200).json(allClients);
     } catch (err) {
         console.log(err);

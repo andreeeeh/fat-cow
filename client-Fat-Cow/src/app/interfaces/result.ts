@@ -27,6 +27,6 @@ export interface Result {
     estimatedProfitTotal: number,
     createdAt: string,
     updatedAt: string,
-    notifyClient: boolean | null,
-    expired: boolean | null,
+    notifyClient: boolean | undefined,
+    expired: boolean | undefined,
 }

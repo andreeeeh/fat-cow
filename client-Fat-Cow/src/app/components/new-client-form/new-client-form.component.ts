@@ -16,13 +16,13 @@ export class NewClientFormComponent {
   @ViewChild('clientForm') clientForm: NgForm = {} as NgForm;
 
   model: Client = {
-    id: 0,
+    id: null,
     name: '',
     phone: '',
     email: '',
-    cep: 0,
+    cep: null,
     street: '',
-    num: 0,
+    num: null,
     orientation: '',
     neighborhood: '',
     city: '',
@@ -34,8 +34,9 @@ export class NewClientFormComponent {
   onSubmit() {
     this.formSubmitted = true;
     if (this.clientForm.valid) {
+      console.log(this.model)
       this.ClientService.addClient(this.model)
-      this.clientForm.resetForm();
+      // this.clientForm.resetForm();
     }
   }
 

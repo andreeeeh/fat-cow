@@ -1,14 +1,14 @@
 <div *ngFor="let client of clients">
     <div class="client">
-        <div class="client-name" (click)="filterByClient(client.id = 0)"> {{client.name}}</div>
-        <ul *ngIf="selectedClient === client.id && showClient">
+        <div class="client-name" (click)="filterByClient(client.id !== null ? client.id : 0)"> {{client.name}}</div>
+        <ul *ngIf="selectedClient === client.id && showClient && clientResults && clientResults[0]?.Result?.length">
             <div class="client-header">
                 <div class="client-head">Order</div>
                 <div class="client-head">Sacks</div>
                 <div class="client-head">Date</div>
                 <div class="delete"></div>
             </div>
-            <li class="client-info" *ngFor="let result of clientResults[0].Result">
+            <li class="client-info" *ngFor="let result of clientResults[0]?.Result">
                 <div class="client-prod">{{result.name}}</div>
                 <div class="client-quantity">{{result.quantity}}</div>
                 <div class="client-date">{{result.createdAt | date: 'mediumDate'}}</div>

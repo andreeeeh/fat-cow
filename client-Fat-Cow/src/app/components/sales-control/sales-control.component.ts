@@ -30,7 +30,7 @@ export class SalesControlComponent {
   }
 
   ngOnInit() {
-    this.ClientService.getAllClients();
+    this.ClientService.getAllClientsResults();
     this.ClientService.allClients$.subscribe(res => {
       this.allClientResults = res;
       this.allClientResults.map(client => this.lastPurchase(client));

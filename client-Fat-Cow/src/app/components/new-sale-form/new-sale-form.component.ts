@@ -49,8 +49,15 @@ export class NewSaleFormComponent {
 
 
   ngOnInit(): void {
+    this.ClientService.getOnlyClients();
     this.ClientService.clients$.subscribe(res => this.clients = res)
   }
+
+  // this.ClientService.getAllClients();
+  // this.ClientService.allClients$.subscribe(res => {
+  //   this.allClientResults = res;
+  //   this.allClientResults.map(client => this.lastPurchase(client));
+  // })
 
   addName(): void {
     if (this.model.prodId)

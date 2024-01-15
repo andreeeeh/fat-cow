@@ -11,25 +11,25 @@ export default (sequelize, DataTypes) => {
         }, email: {
             type: DataTypes.STRING,
             allowNull: false
-        }, CEP: {
+        }, cep: {
             type: DataTypes.INTEGER,
             allowNull: false
-        }, Street: {
+        }, street: {
             type: DataTypes.STRING,
             allowNull: false
-        }, Number: {
+        }, num: {
             type: DataTypes.INTEGER,
             allowNull: false
-        }, Orientation: {
+        }, orientation: {
             type: DataTypes.STRING,
             allowNull: true
-        }, Neighborhood: {
+        }, neighborhood: {
             type: DataTypes.STRING,
             allowNull: true
-        }, City: {
+        }, city: {
             type: DataTypes.STRING,
             allowNull: false
-        }, State: {
+        }, state: {
             type: DataTypes.STRING,
             allowNull: false
         },
