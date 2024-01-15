@@ -36,7 +36,7 @@ export async function deleteOneResult (req, res) {
         let id = await req.params.id;
         console.log(id)
         await db.Result.destroy({ where: { id: id } })
-        res.status(200).send('deleted');
+        res.status(200).json('deleted');
     } catch (err) {
         console.log(err)
         res.status(400).json({ message: 'Error occurred' }); // Send a JSON response with error status

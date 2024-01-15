@@ -1,7 +1,7 @@
-import config from "../config.js"
+import conf from "../config.js"
 
 const product = function (info) {
-    let res = config.product.filter(el => el.prodId == info.prodId)[0]
+    let res = conf.product.filter(el => el.prodId == info.prodId)[0]
     console.log(res)
     return res
 }

@@ -23,8 +23,8 @@
 }
 
 .item {
-    background-color: rgb(230, 230, 230);
-    box-shadow: inset 0 0 2px rgb(255, 255, 255);
+    background-color: #dde5dc;
+    box-shadow: inset 0 0 2px #dde5dc;
     transition: box-shadow 0.3s ease;
 }
 

@@ -1,8 +1,17 @@
 <div *ngFor="let client of clients">
-    <div (click)="filterByClient(client.id)">{{client.name}}
+    <div class="client" (click)="filterByClient(client.id)">{{client.name}}
         <ul *ngIf="selectedClient === client.id && clientResults[0]">
-            <li *ngFor="let result of clientResults[0].Result">{{result.name}}
-                <button (click)="deleteOneResult(result.id)">Delete</button>
+            <div class="client-header">
+                <div class="client-head">Order</div>
+                <div class="client-head">Sack</div>
+                <div class="client-head">Date</div>
+                <div class="client-head"></div>
+            </div>
+            <li class="client-info" *ngFor="let result of clientResults[0].Result">
+                <div class="client-name">{{result.name}}</div>
+                <div class="client-quantity">{{result.quantity}}</div>
+                <div class="client-date">{{result.createdAt}}</div>
+                <button class="delete" (click)="deleteOneResult(result.id)">Delete</button>
             </li>
             <app-graph [clientResults]="clientResults"></app-graph>
         </ul>
