@@ -1,9 +1,41 @@
-<div *ngIf="result">
-    <h1>Result:</h1>
-    <div><span>Product: </span>{{result.name}} ({{result.prodId}})</div>
-    <div><span></span>{{result.season}} Season</div>
-    <div><span>Quantity:</span>{{result.quantity}} packs</div>
-    <div><span>Initial Weight: </span>{{result.initialWeight}} Kg</div>
-    <div><span>Animal Price per Weight: </span>R$ {{result.periodTotalWeight}}</div>
-    <div><span>Animal Price per Pack: </span>R$ {{result.periodTotalPack}}</div>
-</div>
+<div class="result" *ngIf="result">
+    <div class="top-result">
+        <h1>Result:</h1>
+        <div class="client-info">
+            <div class="client-info-product">
+                <div><span>Product: </span>{{result.name}} ({{result.prodId}})</div>
+                <div><span>{{result.season}}</span> Season</div>
+                <div><span>Period: </span>{{result.period}} days</div>
+            </div>
+            <div class="client-info-period">
+                <div><span>Price (per sack): </span>R$ {{result.priceProduct}}</div>
+                <div><span>Initial Weight: </span>{{result.initialWeight}} Kg</div>
+            </div>
+            <div class="client-info-animal">
+                <div><span>Quantity: </span>{{result.quantity}} sack</div>
+                <div><span>Animal Sale Price: </span>R$ {{result.priceWeight}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <app-result-flip class="box1" [title]="'Consume and Weight Gain'" [dataItems]="[
+        { label: 'Daily Weight Gain', value: result.DWG + ' Kg' },
+        { label: 'Daily Consume per Head', value: result.dailyPerHeadWeight + ' Kg' },
+        { label: 'Daily Consume in Total', value: result.dailyTotalWeight + ' Kg - ' + result.dailyTotalPack + ' sack' },
+        { label: 'Consume in the period', value: result.periodTotalWeight + ' Kg - ' + result.periodTotalPack + ' sack' },
+        { label: 'Monthly Weight Gain', value: result.monthlyWeightGain + ' Kg' },
+        { label: 'Weight in the period', value: result.estimatedWeightGain + ' Kg' },
+        { label: 'Final Weight', value: result.finalWeight + ' Kg' },
+    ]"></app-result-flip>
+        <app-result-flip class="box2" [title]="'Costs'" [dataItems]="[
+        { label: 'Daily Cost', value: 'R$ ' + result.periodTotalPack },
+        { label: 'Monthly Cost', value: 'R$ ' + result.monthlyCost },
+        { label: 'Total', value: 'R$ ' + result.periodCost},
+        ]"></app-result-flip>
+
+        <app-result-flip class="1box3" [title]="'Estimated Profit'" [dataItems]="[
+        { label: 'Estimated Profit per Head', value: 'R$ ' + result.estimatedProfitPerHead },
+        { label: 'Estimated Profit in Total', value: 'R$ ' + result.estimatedProfitTotal },
+      ]"></app-result-flip>
+    </div>

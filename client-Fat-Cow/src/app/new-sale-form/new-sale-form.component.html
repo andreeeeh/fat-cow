@@ -1,58 +1,72 @@
-<form (ngSubmit)="onSubmit()" #nutriForm="ngForm">
-    <div *ngIf="clients" class="form-group">
-        <!-- <label for="clientId"></label> -->
-        <select class="form-control" id="clientId" [(ngModel)]="model.clientId" name="clientId" required>
+<form class="form-group" (ngSubmit)="onSubmit()" #nutriForm="ngForm">
+    <div *ngIf="clients" class="input-group client">
+        <label for="product">Client: </label>
+        <select class="form-control" id="clientId" [(ngModel)]="model.clientId" name="clientId"
+            placeholder="Choose a Client">
+            <option value="" disabled selected>Choose a client</option>
             <option *ngFor="let client of clients" [value]="client.id">{{client.name}}</option>
         </select>
     </div>
-    <div class="form-group">
+    <div class="input-group">
         <label for="product">Product: </label>
         <select class="form-control" id="prodId" [(ngModel)]="model.prodId" name="prodId" required>
             <option *ngFor="let prod of product" [value]="prod.prodId">{{prod.name}}</option>
         </select>
     </div>
-    <div class="form-group">
+    <div class="input-group">
         <label>Season: </label>
-        <div>
-            <input type="radio" id="wet" [(ngModel)]="model.season" value="wet" name="wet">
+        <div class="radio">
+            <input type="radio" id="wet" [(ngModel)]="model.season" value="wet" name="season">
             <label for="wet">Wet</label>
-        </div>
-        <div>
-            <input type="radio" id="dry" [(ngModel)]="model.season" value="dry" name="dry">
+            <input type="radio" id="dry" [(ngModel)]="model.season" value="dry" name="season">
             <label for="dry">Dry</label>
         </div>
     </div>
-    <div class="form-group">
-        <label for="period">Period: </label>
-        <input type="number" class="form-control" id="period" [(ngModel)]="model.period" name="period" #period="ngModel"
-            required>
-        <div *ngIf="period.invalid && (period.dirty || period.touched)" class="alert alert-danger">
-            <div *ngIf="period.errors?.['required']">Period is required</div>
-        </div>
-        <!-- <div [hidden]="period.valid || period.pristine" class="alert alert-danger">
-            Period is required
-        </div> -->
+    <div class="input-group">
+        <label for="period">Period:
+            <div *ngIf="period.invalid && (period.dirty || period.touched)" class="error-message">
+                <div *ngIf="period.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="number" id="period" [(ngModel)]="model.period" name="period" #period="ngModel" required>
     </div>
-    <div class="form-group">
-        <label for="quantity">Quantity of Animals: </label>
-        <input type="number" class="form-control" id="quantity" [(ngModel)]="model.quantity" name="quantity" required>
+    <div class="input-group">
+        <label for="quantity">Quantity of Animals:
+            <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)" class="error-message">
+                <div *ngIf="quantity.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="number" id="quantity" [(ngModel)]="model.quantity" name="quantity" #quantity="ngModel" required>
     </div>
-    <div class="form-group">
-        <label for="initialWeight">Initial Weight (per Animal): </label>
-        <input type="number" class="form-control" id="initialWeight" [(ngModel)]="model.initialWeight"
-            name="initialWeight" required>
+    <div class="input-group">
+        <label for="initialWeight">Initial Weight (per Animal):
+            <div *ngIf="initialWeight.invalid && (initialWeight.dirty || initialWeight.touched)" class="error-message">
+                <div *ngIf="initialWeight.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="number" id="initialWeight" [(ngModel)]="model.initialWeight" name="initialWeight"
+            #initialWeight=ngModel required>
     </div>
-    <div class="form-group">
-        <label for="priceProduct">Price (per Sack): </label>
-        <input type="number" class="form-control" id="priceProduct" [(ngModel)]="model.priceProduct" name="priceProduct"
-            required>
+    <div class="input-group">
+        <label for="priceProduct">Price (per Sack):
+            <div *ngIf="priceProduct.invalid && (priceProduct.dirty || priceProduct.touched)" class="error-message">
+                <div *ngIf="priceProduct.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="number" id="priceProduct" [(ngModel)]="model.priceProduct" name="priceProduct"
+            #priceProduct="ngModel" required>
     </div>
-    <div class="form-group">
-        <label for="priceWeight">Animal Sale Price (per Weight): </label>
-        <input type="number" class="form-control" id="priceProduct" [(ngModel)]="model.priceWeight" name="priceWeight"
+    <div class="input-group">
+        <label for="priceWeight">Animal Sale Price (per Weight):
+            <div *ngIf="priceWeight.invalid && (priceWeight.dirty || priceWeight.touched)" class="error-message">
+                <div *ngIf="priceWeight.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="number" id="priceWeight" [(ngModel)]=" model.priceWeight" name="priceWeight" #priceWeight=ngModel
             required>
     </div>
 
-    <button type="submit" class="btn btn-default" [disabled]="!nutriForm.valid">Submit</button>
+    <button class="submit-form" type="submit" [disabled]="!nutriForm.valid"
+        [title]="nutriForm.valid ? '' : 'Please fill out all required fields'">Submit</button>
 </form>
 <app-result></app-result>

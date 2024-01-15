@@ -1,0 +1,13 @@
+<div class="flip-container" [class.flip]="flipped" (click)="flip()">
+    <div class="flipper">
+        <div class="front">
+            <h2>{{ title }}</h2>
+        </div>
+        <div class="back">
+            <div *ngFor="let item of dataItems" class="back-item">
+                <span class="label">{{ item.label }}:</span>
+                <span class="value">{{ item.value }}</span>
+            </div>
+        </div>
+    </div>
+</div>

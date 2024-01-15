@@ -17,7 +17,7 @@ export class NewSaleFormComponent {
   constructor(private serviceResult: ServiceResultService,
     private serviceClient: ServiceClientService) { }
 
-  @ViewChild('nutriForm') nutriForm?: NgForm;
+  @ViewChild('nutriForm') nutriForm: NgForm = {} as NgForm;
 
   product: Product[] = [
     { prodId: 866431, name: "Proteinado Plus" },
@@ -46,6 +46,8 @@ export class NewSaleFormComponent {
   }
   clients: Client[] = [];
 
+  formSubmitted = false;
+
 
   ngOnInit(): void {
     this.serviceClient.clients$.subscribe(res => this.clients = res)
@@ -57,13 +59,14 @@ export class NewSaleFormComponent {
   };
 
   onSubmit() {
-    if (this.nutriForm) {
+    this.formSubmitted = true;
+    if (this.nutriForm.valid) {
       this.addName();
       this.model.clientId = Number(this.model.clientId);
       this.model.prodId = Number(this.model.prodId);
       console.log(this.model);
       this.serviceResult.addInfoAnimal(this.model)
-      // this.nutriForm.resetForm();
+      this.nutriForm.resetForm();
     }
   }
 

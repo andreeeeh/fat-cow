@@ -10,6 +10,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ClientComponent } from './client/client.component';
+import { NgChartsModule } from 'ng2-charts';
+import { GraphComponent } from './graph/graph.component';
+import { ResultFlipComponent } from './result-flip/result-flip.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { ClientComponent } from './client/client.component';
     ResultComponent,
     HomeComponent,
     ClientComponent,
+    GraphComponent,
+    ResultFlipComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

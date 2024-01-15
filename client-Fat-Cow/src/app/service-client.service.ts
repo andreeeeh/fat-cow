@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Client } from './client';
 import { InfoAnimal } from './infoAnimal';
 import { Result } from './result';
@@ -22,9 +22,9 @@ export class ServiceClientService {
   clientResult = new BehaviorSubject<ClientResult[]>([]);
   clientResult$ = this.clientResult.asObservable();
 
-  getClientResults(id: number) {
+  getClientResults(id: number): Observable<ClientResult[]> {
     return this.http.get<ClientResult[]>(`http://localhost:3000/client-results/${id}`)
-      .subscribe(res => this.clientResult.next(res))
+
   }
 
   deleteOneResult(id: number) {

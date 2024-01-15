@@ -12,6 +12,9 @@ export class ResultComponent {
   constructor(private serviceResult: ServiceResultService) { }
   result?: Result;
 
+  flip(element: any) {
+    element.classList.toggle('flip');
+  }
   ngOnInit(): void {
     this.serviceResult.result$.subscribe(res => this.result = res)
     console.log(this.result)
