@@ -8,6 +8,9 @@ export default (sequelize, DataTypes) => {
         }, phone: {
             type: DataTypes.STRING,
             allowNull: false
+        }, email: {
+            type: DataTypes.STRING,
+            allowNull: false
         }, CEP: {
             type: DataTypes.INTEGER,
             allowNull: false

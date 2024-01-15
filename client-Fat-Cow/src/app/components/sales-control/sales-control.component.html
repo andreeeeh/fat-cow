@@ -1,0 +1,16 @@
+<div *ngFor="let client of allClientResults" (load)="lastPurchase(client)">
+    <div *ngIf="client.Result[0].notifyClient">
+        <div> The client's stock from the will be over soon. Get in touch with they.</div>
+        <div>
+            <div> {{client.name}}</div>
+            <div> phone</div>
+            <div> e-mail</div>
+        </div>
+        <div>
+            <div>Last Purchase</div>
+            <div> {{client.Result[0].name}} ({{client.Result[0].prodId}})</div>
+            <div> {{client.Result[0].quantity}}</div>
+            <div> {{client.Result[0].createdAt}}</div>
+        </div>
+    </div>
+</div>

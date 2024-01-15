@@ -1,0 +1,43 @@
+<div class="result" *ngIf="result">
+    <div class="top-result">
+        <h1>Result:</h1>
+        <div class="client-info">
+            <div class="client-info-product">
+                <div><span>Product: </span>{{result.name}} ({{result.prodId}})</div>
+                <div><span>{{result.season}}</span> Season</div>
+                <div><span>Period: </span>{{result.period}} days</div>
+            </div>
+            <div class="client-info-period">
+                <div><span>Price (per sack): </span>R$ {{result.priceProduct}}</div>
+                <div><span>Initial Weight: </span>{{result.initialWeight}} Kg</div>
+            </div>
+            <div class="client-info-animal">
+                <div><span>Quantity: </span>{{result.quantity}} sack</div>
+                <div><span>Animal Sale Price: </span>R$ {{result.priceWeight | number: '1.2-2'}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <app-result-flip class="box1" [title]="'Consume and Weight Gain'" [dataItems]="[
+        { label: 'Daily Weight Gain', value: result.DWG.toFixed(2) + ' Kg'},
+        { label: 'Daily Consume per Head', value: result.dailyPerHeadWeight.toFixed(2) + ' Kg' },
+        { label: 'Daily Consume in Total', value: result.dailyTotalWeight.toFixed(2) + ' Kg - ' + result.dailyTotalPack.toFixed(2) + ' sacks' },
+        { label: 'Consume in the period', value: result.periodTotalWeight.toFixed(2) + ' Kg - ' + result.periodTotalPack.toFixed(2) + ' sacks' },
+        { label: 'Monthly Weight Gain', value: result.monthlyWeightGain.toFixed(2) + ' Kg' },
+        { label: 'Weight in the period', value: result.estimatedWeightGain.toFixed(2) + ' Kg' },
+        { label: 'Final Weight', value: result.finalWeight.toFixed(2) + ' Kg' },
+    ]"></app-result-flip>
+
+        <app-result-flip class="box2" [title]="'Costs'" [dataItems]="[
+        { label: 'Daily Cost', value: 'R$ ' + result.periodTotalPack.toFixed(2) },
+        { label: 'Period Cost', value: 'R$ ' + result.periodCost.toFixed(2) },
+        { label: 'Monthly Cost', value: 'R$ ' + result.monthlyCost.toFixed(2) },
+        { label: 'Total', value: 'R$ ' + result.periodCost.toFixed(2)},
+        ]"></app-result-flip>
+
+        <app-result-flip class="box3" [title]="'Estimated Profit'" [dataItems]="[
+        { label: 'Estimated Profit per Head', value: 'R$ ' + result.estimatedProfitPerHead.toFixed(2) },
+        { label: 'Estimated Profit in Total', value: 'R$ ' + result.estimatedProfitTotal.toFixed(2) },
+      ]"></app-result-flip>
+    </div>

@@ -1,0 +1,90 @@
+<form class="form-group" (ngSubmit)="onSubmit()" #clientForm="ngForm">
+    <div class="input-group">
+        <label for="name">Name:
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+                <div *ngIf="name.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="string" id="name" [(ngModel)]="model.name" name="name" #name="ngModel" required>
+    </div>
+    <div class="input-group">
+        <label for="phone">Phone:
+            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error-message">
+                <div *ngIf="phone.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="string" id="phone" [(ngModel)]="model.phone" name="phone" #phone="ngModel" required>
+    </div>
+    <div class="input-group">
+        <label for="email">E-mail:
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+                <div *ngIf="email.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="string" id="email" [(ngModel)]="model.email" name="email" #email="ngModel" required>
+    </div>
+    <div class="input-group">
+        <label for="cep">CEP:
+            <div *ngIf="cep.invalid && (cep.dirty || cep.touched)" class="error-message">
+                <div *ngIf="cep.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="num" id="cep" [(ngModel)]="model.cep" name="cep" #cep="ngModel" required>
+    </div>
+    <div class="input-group">
+        <label for="street">Street:
+            <div *ngIf="street.invalid && (street.dirty || street.touched)" class="error-message">
+                <div *ngIf="street.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="string" id="street" [(ngModel)]="model.street" name="street" #street="ngModel" required>
+    </div>
+    <div class="input-group">
+        <label for=" num"> Number:
+            <div *ngIf=" num.invalid && ( num.dirty ||  num.touched)" class="error-message">
+                <div *ngIf=" num.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="number" id=" num" [(ngModel)]="model. num" name=" num" #num="ngModel" required>
+    </div>
+    <div class="input-group">
+        <label for="orientation">Orientation:
+            <div *ngIf="orientation.invalid && (orientation.dirty || orientation.touched)" class="error-message">
+                <div *ngIf="orientation.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="string" id="orientation" [(ngModel)]="model.orientation" name="orientation" #orientation="ngModel"
+            required>
+    </div>
+    <div class="input-group">
+        <label for="neighborhood">Neighborhood:
+            <div *ngIf="neighborhood.invalid && (neighborhood.dirty || neighborhood.touched)" class="error-message">
+                <div *ngIf="neighborhood.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="string" id="neighborhood" [(ngModel)]="model.neighborhood" name="neighborhood"
+            #neighborhood="ngModel" required>
+    </div>
+    <div class="input-group">
+        <label for="city">City:
+            <div *ngIf="city.invalid && (city.dirty || city.touched)" class="error-message">
+                <div *ngIf="city.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="string" id="city" [(ngModel)]="model.city" name="city" #city="ngModel" required>
+    </div>
+    <div class="input-group">
+        <label for="state">State:
+            <div *ngIf="state.invalid && (state.dirty || state.touched)" class="error-message">
+                <div *ngIf="state.errors?.['required']">*required</div>
+            </div>
+        </label>
+        <input type="string" id="state" [(ngModel)]="model.state" name="state" #state="ngModel" required>
+    </div>
+
+
+
+    <button class="submit-form" type="submit" [disabled]="!clientForm.valid"
+        [title]="clientForm.valid ? '' : 'Please fill out all required fields'">Submit</button>
+</form>
+<app-result></app-result>

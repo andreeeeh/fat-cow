@@ -102,6 +102,12 @@ export default (sequelize, DataTypes) => {
         estimatedProfitTotal: {
             type: DataTypes.FLOAT,
             allowNull: false
+        }, notifyClient: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
+        }, expired: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
         },
     });
 

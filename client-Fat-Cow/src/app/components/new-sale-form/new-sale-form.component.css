@@ -1,0 +1,89 @@
+*::selection {
+    background: rgb(198, 221, 198);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.input-group label {
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+input,
+select {
+    height: 30px;
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 15px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    flex: 4;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid green;
+}
+
+.error-message {
+    color: red;
+    font-size: 10px;
+    margin-left: auto;
+}
+
+.radio {
+    flex: 4;
+    align-content: left;
+    display: flex;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Create a custom radio button */
+input[type="radio"]+label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #8ebf6e;
+}
+
+/* Style the custom radio button when checked */
+input[type="radio"]:checked+label:before {
+    background-color: #8ebf6e;
+}
+
+.submit-form {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #8ebf6e;
+    border: 1px solid #8ebf6e;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: transform 0.1s ease;
+}
+
+.submit-form:active {
+    transform: scale(0.95);
+}
+
+.submit-form:disabled {
+    cursor: not-allowed;
+}

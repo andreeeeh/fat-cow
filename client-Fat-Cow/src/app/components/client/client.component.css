@@ -1,0 +1,78 @@
+.client {
+    border: 1px solid#ccc;
+    background-color: #dde5dc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.client-name {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 7px;
+}
+
+.client-info,
+.client-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.client-header {
+    font-weight: bold;
+    border-top: 01px solid #ccc;
+    border-bottom: 01px solid #ccc;
+}
+
+.client-head,
+.client-prod,
+.client-product,
+.client-quantity,
+.client-date {
+    flex: 2;
+    margin: 5px;
+}
+
+.delete {
+    display: flex;
+    flex: 1;
+    margin: 5px;
+    justify-content: flex-end;
+}
+
+.delete-btn {
+    height: 10%;
+    width: 50%;
+    padding: 10px 20px;
+    font-size: 1vw;
+    color: #fff;
+    background-color: #8ebf6e;
+    border: 1px solid #8ebf6e;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: transform 0.1s ease;
+}
+
+.delete-btn:active {
+    transform: scale(0.95);
+}
+
+.graph {
+    height: 50%;
+    width: 50%;
+}
+
+@media (max-width: 1000px) {
+    .client {
+        font-size: 0.9rem;
+    }
+
+    .delete-btn {
+        font-size: 14px;
+        padding: 3px 6px;
+        height: 25%;
+        width: 100%;
+    }
+}
