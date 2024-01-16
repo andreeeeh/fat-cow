@@ -33,16 +33,16 @@ export class NewSaleFormComponent {
   clients: Client[] = [];
 
   ngOnInit(): void {
-    this.ClientService.getOnlyClients();
+    this.ClientService.getClientsList();
     this.ClientService.clients$.subscribe(res => this.clients = res)
   }
 
 
-  onSubmit(nutriForm: NgForm) {
+  onSubmit() {
     this.addName();
     this.nutriForm.value.clientId = Number(this.nutriForm.value.clientId);
     this.nutriForm.value.prodId = Number(this.nutriForm.value.prodId);
-    this.ResultService.addInfoAnimal(this.nutriForm.value)
+    this.ResultService.getNutriResult(this.nutriForm.value)
     this.nutriForm.resetForm();
   }
 

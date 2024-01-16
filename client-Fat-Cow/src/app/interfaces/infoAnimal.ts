@@ -1,11 +1,11 @@
 export interface InfoAnimal {
-    clientId: number | null,
+    clientId: number,
     name: string,
-    prodId: number | null,
+    prodId: number,
     season: string,
-    period: number | null,
-    quantity: number | null,
-    initialWeight: number | null,
-    priceProduct: number | null,
-    priceWeight: number | null
+    period: number,
+    quantity: number,
+    initialWeight: number,
+    priceProduct: number,
+    priceWeight: number,
 }

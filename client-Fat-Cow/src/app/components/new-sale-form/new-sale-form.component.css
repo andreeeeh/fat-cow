@@ -84,3 +84,9 @@ input[type="radio"]:checked+label:before {
 .submit-form:disabled {
     cursor: not-allowed;
 }
+
+@media (max-width: 600px) {
+    label {
+        font-size: 12px;
+    }
+}

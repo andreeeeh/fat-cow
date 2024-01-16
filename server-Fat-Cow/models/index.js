@@ -41,18 +41,6 @@ Promise.all(
         db[model.name] = model;
     });
 
-
-    // for (const file of files) {
-    //     if (file !== 'index.js') {
-    //         // const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-    //         import(path.join(__dirname, file)).then(module => {
-    //             const model = module.default(sequelize, Sequelize.DataTypes);
-    //             model.sync()
-    //             db[model.name] = model
-    //         })
-    //     }
-    // }
-
     db.Results = ResultsModel(sequelize, Sequelize);
     db.Client = ClientModel(sequelize, Sequelize);
 

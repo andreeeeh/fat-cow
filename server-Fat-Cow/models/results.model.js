@@ -5,7 +5,7 @@ export default (sequelize, DataTypes) => {
         clientId: {
             type: DataTypes.INTEGER,
             allowNull: false, references: {
-                model: 'Clients', // name of your Client model
+                model: 'Clients',
                 key: 'id',
             },
         }, name: {

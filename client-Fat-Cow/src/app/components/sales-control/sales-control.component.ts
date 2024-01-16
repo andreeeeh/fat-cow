@@ -15,26 +15,24 @@ export class SalesControlComponent {
   dueDate?: number | Date
   twoWeeksToDueDate?: number | Date
 
-
   lastPurchase(client: ClientResult) {
+    let result = null;
     if (client.Result.length) {
-      this.dueDate = new Date(client.Result[0].createdAt)
-      this.dueDate.setDate(this.dueDate.getDate() + client.Result[0].period)
-      this.twoWeeksToDueDate = new Date(client.Result[0].createdAt)
-      this.twoWeeksToDueDate.setDate(this.twoWeeksToDueDate.getDate() + client.Result[0].period - 14)
-      // console.log(client.Result[0].notifyClient)
-      client.Result[0].notifyClient = this.twoWeeksToDueDate < new Date() ? true : false
-      // console.log(client.Result[0].notifyClient)
-      // console.log(this.twoWeeksToDueDate)
-      // console.log(this.dueDate)
-      // client.Result[0].expired = this.dueDate < new Date() ? false : true
-      // console.log(client.Result[0].expired)
+      client.Result.map(el => {
+        this.dueDate = new Date(el.createdAt)
+        this.dueDate.setDate(this.dueDate.getDate() + el.period)
+        this.twoWeeksToDueDate = new Date(el.createdAt)
+        this.twoWeeksToDueDate.setDate(this.twoWeeksToDueDate.getDate() + el.period - 14)
+        el.notifyClient = this.twoWeeksToDueDate < new Date() ? true : false
+        result = el;
+      })
     }
+    return result;
   }
 
   ngOnInit() {
-    this.ClientService.getOneClientsResults();
-    this.ClientService.allClients$.subscribe(res => {
+    this.ClientService.getAllClientsAndResults();
+    this.ClientService.clientResults$.subscribe(res => {
       this.allClientResults = res;
       this.allClientResults.map(client => this.lastPurchase(client));
     })

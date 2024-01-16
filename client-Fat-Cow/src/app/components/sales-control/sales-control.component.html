@@ -1,18 +1,21 @@
 <div *ngFor="let client of allClientResults">
-    <div class="client-alert" *ngIf="client.Result.length && client.Result[0].notifyClient"
-        (load)="lastPurchase(client)">
-        <div class="alert-title">The client's stock will be over soon. Get in touch with they.</div>
-        <div class="client-info">
-            <div class="personal-info">
-                <div class="item"> {{client.name}}</div>
-                <div class="item"> {{client.phone}}</div>
-                <div class="item">{{client.email}}</div>
-            </div>
-            <div class="purchase-info">
-                <div class="last-purchase">Last Purchase</div>
-                <div class="item"> {{client.Result[0].name}} ({{client.Result[0].prodId}})</div>
-                <div class="item"> {{client.Result[0].quantity}}</div>
-                <div class="item"> {{client.Result[0].createdAt}}</div>
+    <div *ngIf="lastPurchase(client)">
+        <div *ngFor="let result of client.Result">
+            <div class="client-alert" *ngIf="result.notifyClient === true">
+                <div class="alert-title">The client's stock will run out soon. Get in touch with them.</div>
+                <div class="client-info">
+                    <div class="personal-info">
+                        <div class="item"> {{client.name}}</div>
+                        <div class="item"> {{client.phone}}</div>
+                        <div class="item">{{client.email}}</div>
+                    </div>
+                    <div class="purchase-info">
+                        <div class="last-purchase">Last Purchase</div>
+                        <div class="item"> {{result.name}} ({{result.prodId}})</div>
+                        <div class="item"> {{result.quantity}} sacks</div>
+                        <div class="item"> {{result.createdAt | date: "longDate"}} for {{result.period}} days</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

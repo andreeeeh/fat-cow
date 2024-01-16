@@ -10,15 +10,13 @@
     border-radius: 8px;
 }
 
-.client-info-product,
-.client-info-period,
-.client-info-animal {
+.info {
     display: flex;
     margin: 10px;
     justify-content: space-between;
 }
 
-.client-info span {
+.info span {
     font-weight: bold;
 }
 
@@ -44,12 +42,35 @@ app-result-flip:nth-child(3) {
 }
 
 @media (max-width: 900px) {
+    .top-result {
+        flex-direction: column;
+    }
+
     .client-info {
         width: 100%;
     }
 
+    .info {
+        flex-direction: column;
+        margin: 0;
+        ;
+    }
+
+    .info span,
+    .info div {
+        font-weight: smaller;
+        padding: 3px;
+    }
+
     .container {
         grid-template-columns: 1fr;
+        min-height: 500px;
+    }
+
+    .back {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
 }

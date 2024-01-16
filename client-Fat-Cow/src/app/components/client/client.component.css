@@ -6,10 +6,16 @@
     padding: 5px;
 }
 
+.client-top {
+    display: flex;
+    align-items: center;
+}
+
 .client-name {
     font-size: 19px;
     font-weight: bold;
-    margin: 7px;
+    flex: 8;
+    padding: 10px;
 }
 
 .client-info,
@@ -42,20 +48,33 @@
 }
 
 .delete-btn {
-    height: 10%;
-    width: 50%;
-    padding: 10px 20px;
-    font-size: 1vw;
+    height: 35px;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
     color: #fff;
     background-color: #8ebf6e;
     border: 1px solid #8ebf6e;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: auto;
     transition: transform 0.1s ease;
 }
 
-.delete-btn:active {
+.delete-client {
+    height: 35px;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    background-color: #8ebf6e;
+    border: 1px solid #8ebf6e;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.delete-btn:active,
+.delete-client:active {
     transform: scale(0.95);
 }
 
@@ -72,7 +91,7 @@
     .delete-btn {
         font-size: 14px;
         padding: 3px 6px;
-        height: 25%;
-        width: 100%;
+        height: 30px;
+        width: 90px;
     }
 }

@@ -14,7 +14,19 @@ export async function getResultsByClient (req, res) {
         res.status(200).json(allResults);
     } catch (err) {
         console.log(err)
-        res.status(400).json({ message: 'error' });
+        res.status(400).send({ message: 'Internal Server Error' });
+    }
+}
+
+export async function deleteOneClient (req, res) {
+    try {
+        let id = await req.params.id;
+        await db.Result.destroy({ where: { clientId: id } });
+        await db.Client.destroy({ where: { id: id } })
+        res.status(200).send({ message: 'Client deleted' });
+    } catch (err) {
+        console.log(err)
+        res.status(400).send({ message: 'Internal Server Error' });
     }
 }
 
@@ -26,9 +38,13 @@ export async function addClient (req, res) {
         res.status(201).send(newClient)
     } catch (err) {
         console.log(err)
-        res.status(400).json({ message: 'error' });
+        res.status(400).send({ message: 'Internal Server Error' });
     }
 }
+
+
+
+
 
 export async function getAllClientsResults (req, res) {
     try {
@@ -41,16 +57,16 @@ export async function getAllClientsResults (req, res) {
         res.status(200).json(allClients);
     } catch (err) {
         console.log(err);
-        res.status(400).json({ message: 'error' });
+        res.status(400).send({ message: 'Internal Server Error' });
     }
 }
 
 export async function getOnlyClients (req, res) {
     try {
         let allClients = await db.Client.findAll();
-        res.status(200).json(allClients);
+        res.status(200).send(allClients);
     } catch (err) {
         console.log(err);
-        res.status(400).json({ message: 'error' });
+        res.status(400).json({ message: 'Internal Server Error' });
     }
 }

@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ResultFlipComponent {
   @Input() flipped = false;
-  @Input() title = 'Default Title';
+  @Input() title = '';
   @Input() dataItems: { label: string; value: string | number }[] = [];
 
   flip() {

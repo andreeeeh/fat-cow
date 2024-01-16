@@ -34,6 +34,7 @@ export class GraphComponent implements OnChanges {
       this.chart?.update();
     }
   }
+
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
     maintainAspectRatio: true,

@@ -1,4 +1,4 @@
-<form #nutriForm="ngForm" class="form-group" (ngSubmit)="onSubmit(nutriForm)">
+<form #nutriForm="ngForm" class="form-group" (ngSubmit)="onSubmit()">
     <div *ngIf="clients" class="input-group client">
         <label for="client">Client: </label>
         <select class="form-control" name="clientId" ngModel required>

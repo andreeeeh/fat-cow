@@ -14,14 +14,13 @@ export class ResultService {
   result = new BehaviorSubject<Result | undefined>(undefined);
   result$ = this.result.asObservable();
 
-  addInfoAnimal(infoAnimal: InfoAnimal): void {
+  getNutriResult(infoAnimal: InfoAnimal): void {
     this.http.post<Result>("http://localhost:3000/nutri-result", infoAnimal)
       .subscribe(res => this.result.next(res))
   }
 
   deleteOneResult(id: number) {
     return this.http.delete(`http://localhost:3000/delete-result/${id}`)
-
   }
 
 }

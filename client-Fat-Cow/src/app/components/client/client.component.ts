@@ -23,11 +23,18 @@ export class ClientComponent implements OnInit {
   filterByClient(id: number): void {
     this.selectedClient = id;
     this.showClient = !this.showClient;
-    this.ClientService.getClientResults(id).subscribe(res => this.clientResults = res.slice())
+    this.ClientService.getOneClientResults(id).subscribe(res => this.clientResults = res.slice())
+  }
+
+  deleteOneClient(id: number): void {
+    this.ClientService.deleteOneClient(id).subscribe(() => {
+      const updatedClients = this.clients.filter(client => client.id !== id)
+      this.clients = updatedClients;
+    })
   }
 
   deleteOneResult(id: number): void {
-    this.ResultService.deleteOneResult(id).subscribe(res => {
+    this.ResultService.deleteOneResult(id).subscribe(() => {
       const updatedResults = [...this.clientResults];
       updatedResults[0].Result = this.clientResults[0].Result.filter(res => res.id !== id)
       this.clientResults = updatedResults;
@@ -35,12 +42,9 @@ export class ClientComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ClientService.getOnlyClients();
-    this.ClientService.clients$.subscribe(res => {
-      this.clients = res
-      // console.log(this.clients)
-    })
-    this.ClientService.allClients$.subscribe(res => this.clientResults = res);
+    this.ClientService.getClientsList();
+    this.ClientService.clients$.subscribe(res => this.clients = res)
+    this.ClientService.clientResults$.subscribe(res => this.clientResults = res);
   }
 
 }

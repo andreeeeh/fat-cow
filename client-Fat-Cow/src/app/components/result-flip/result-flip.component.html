@@ -1,4 +1,4 @@
-<div class="flip-container" [class.flip]="flipped" (click)="flip()">
+<div class="flip-container" [ngClass]="{'flip': flipped}" (click)="flip()">
     <div class="flipper">
         <div class="front">
             <h2>{{ title }}</h2>

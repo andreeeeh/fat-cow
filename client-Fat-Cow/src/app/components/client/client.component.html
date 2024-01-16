@@ -1,6 +1,9 @@
 <div *ngFor="let client of clients">
     <div class="client">
-        <div class="client-name" (click)="filterByClient(client.id !== null ? client.id : 0)"> {{client.name}}</div>
+        <div class="client-top">
+            <div class="client-name" (click)="filterByClient(client.id !== null ? client.id : 0)"> {{client.name}}</div>
+            <button class="delete-client" (click)="deleteOneClient(client.id !== null ? client.id : 0)">Delete</button>
+        </div>
         <ul *ngIf="selectedClient === client.id && showClient && clientResults && clientResults[0]?.Result?.length">
             <div class="client-header">
                 <div class="client-head">Order</div>

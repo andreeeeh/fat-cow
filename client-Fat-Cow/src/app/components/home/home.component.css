@@ -1,3 +1,11 @@
+.logo {
+    width: 3.5%;
+    margin: 0;
+    padding: 0;
+    margin-right: auto;
+    margin-left: 30px;
+}
+
 .fixed-menu {
     position: sticky;
     top: 0;
@@ -31,12 +39,6 @@
     transition: box-shadow 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
-    .item {
-        margin-right: 20px;
-    }
-
-}
 
 .item:hover {
     box-shadow: 0 0 5px #fff;
@@ -54,4 +56,14 @@
 
 .home-menu:hover .home {
     box-shadow: 0 0 10px #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .item {
+        margin-right: 20px;
+    }
+
+    .menu-item {
+        font-size: small;
+    }
 }

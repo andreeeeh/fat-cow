@@ -29,8 +29,6 @@ const result = function (info) {
     const periodRecommendation = dailyRecommendation * 3.5
     const estimatedProfitPerHead = estimatedWeightGain / 30 * info.priceWeight
     const estimatedProfitTotal = estimatedProfitPerHead * info.quantity;
-    const notifyClient = false;
-    const expired = false;
 
     return {
         clientId: info.clientId,

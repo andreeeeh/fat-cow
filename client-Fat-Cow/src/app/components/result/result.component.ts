@@ -14,7 +14,6 @@ export class ResultComponent {
 
   ngOnInit(): void {
     this.ResultService.result$.subscribe(res => this.result = res)
-    // console.log(this.result)
   }
 
 }

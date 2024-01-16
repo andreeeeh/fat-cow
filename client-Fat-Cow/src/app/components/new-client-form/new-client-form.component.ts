@@ -12,8 +12,9 @@ export class NewClientFormComponent {
   constructor(private ClientService: ClientService) { }
   @ViewChild('clientForm') clientForm: NgForm = {} as NgForm;
 
-  onSubmit(clientForm: NgForm) {
+  onSubmit() {
     this.ClientService.addClient(this.clientForm.value)
+    alert('Client Added')
   }
 
 }
