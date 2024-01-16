@@ -1,16 +1,19 @@
 <div *ngFor="let client of allClientResults">
-    <div *ngIf="client.Result.length && client.Result[0].notifyClient" (load)="lastPurchase(client)">
-        <div> The client's stock from the will be over soon. Get in touch with they.</div>
-        <div>
-            <div> {{client.name}}</div>
-            <div> phone</div>
-            <div> e-mail</div>
-        </div>
-        <div>
-            <div>Last Purchase</div>
-            <div> {{client.Result[0].name}} ({{client.Result[0].prodId}})</div>
-            <div> {{client.Result[0].quantity}}</div>
-            <div> {{client.Result[0].createdAt}}</div>
+    <div class="client-alert" *ngIf="client.Result.length && client.Result[0].notifyClient"
+        (load)="lastPurchase(client)">
+        <div class="alert-title">The client's stock will be over soon. Get in touch with they.</div>
+        <div class="client-info">
+            <div class="personal-info">
+                <div class="item"> {{client.name}}</div>
+                <div class="item"> {{client.phone}}</div>
+                <div class="item">{{client.email}}</div>
+            </div>
+            <div class="purchase-info">
+                <div class="last-purchase">Last Purchase</div>
+                <div class="item"> {{client.Result[0].name}} ({{client.Result[0].prodId}})</div>
+                <div class="item"> {{client.Result[0].quantity}}</div>
+                <div class="item"> {{client.Result[0].createdAt}}</div>
+            </div>
         </div>
     </div>
 </div>

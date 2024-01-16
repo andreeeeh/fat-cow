@@ -35,12 +35,6 @@ select:focus {
     outline: 2px solid green;
 }
 
-.error-message {
-    color: red;
-    font-size: 10px;
-    margin-left: auto;
-}
-
 .radio {
     flex: 4;
     align-content: left;
@@ -51,7 +45,6 @@ input[type="radio"] {
     display: none;
 }
 
-/* Create a custom radio button */
 input[type="radio"]+label:before {
     content: "";
     display: inline-block;
@@ -62,9 +55,14 @@ input[type="radio"]+label:before {
     border: 2px solid #8ebf6e;
 }
 
-/* Style the custom radio button when checked */
 input[type="radio"]:checked+label:before {
     background-color: #8ebf6e;
+}
+
+.btn-space {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .submit-form {
@@ -76,7 +74,6 @@ input[type="radio"]:checked+label:before {
     border: 1px solid #8ebf6e;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: auto;
     transition: transform 0.1s ease;
 }
 

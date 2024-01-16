@@ -1,89 +1,54 @@
-<form class="form-group" (ngSubmit)="onSubmit()" #clientForm="ngForm">
+<form #clientForm="ngForm" class="form-group" (ngSubmit)="onSubmit(clientForm)">
     <div class="input-group">
-        <label for="name">Name:
-            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
-                <div *ngIf="name.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="string" id="name" [(ngModel)]="model.name" name="name" #name="ngModel" required>
+        <label for="name">Name: </label>
+        <input type="string" name="name" #name="ngModel" ngModel required
+            [placeholder]="(name.touched && name.invalid && name.errors?.['required']) ? 'Name is required' : '' ">
     </div>
     <div class="input-group">
-        <label for="phone">Phone:
-            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error-message">
-                <div *ngIf="phone.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="string" id="phone" [(ngModel)]="model.phone" name="phone" #phone="ngModel" required>
+        <label for="phone">Phone:</label>
+        <input type="string" name="phone" #phone="ngModel" ngModel required
+            [placeholder]="(phone.touched && phone.invalid && phone.errors?.['required']) ? 'Phone is required' : '' ">
     </div>
     <div class="input-group">
-        <label for="email">E-mail:
-            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
-                <div *ngIf="email.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="string" id="email" [(ngModel)]="model.email" name="email" #email="ngModel" required>
+        <label for="email">E-mail: </label>
+        <input type="string" name="email" #email="ngModel" ngModel required
+            [placeholder]="(email.touched && email.invalid && email.errors?.['required']) ? 'E-mail is required' : '' ">
     </div>
     <div class="input-group">
-        <label for="cep">CEP:
-            <div *ngIf="cep.invalid && (cep.dirty || cep.touched)" class="error-message">
-                <div *ngIf="cep.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="num" id="cep" [(ngModel)]="model.cep" name="cep" #cep="ngModel" required>
+        <label for="cep">CEP: </label>
+        <input type="num" name="cep" #cep="ngModel" ngModel required
+            [placeholder]="(cep.touched && cep.invalid && cep.errors?.['required']) ? 'CEP is required' : '' ">
     </div>
     <div class="input-group">
-        <label for="street">Street:
-            <div *ngIf="street.invalid && (street.dirty || street.touched)" class="error-message">
-                <div *ngIf="street.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="string" id="street" [(ngModel)]="model.street" name="street" #street="ngModel" required>
+        <label for="street">Street: </label>
+        <input type="string" name="street" #street="ngModel" ngModel required
+            [placeholder]="(street.touched && street.invalid && street.errors?.['required']) ? 'Street is required' : '' ">
     </div>
     <div class="input-group">
-        <label for=" num"> Number:
-            <div *ngIf=" num.invalid && ( num.dirty ||  num.touched)" class="error-message">
-                <div *ngIf=" num.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="number" id=" num" [(ngModel)]="model. num" name=" num" #num="ngModel" required>
+        <label for=" num"> Number: </label>
+        <input type="number" name="num" #num="ngModel" ngModel required
+            [placeholder]="(num.touched && num.invalid && num.errors?.['required']) ? 'Number is required' : '' ">
     </div>
     <div class="input-group">
-        <label for="orientation">Orientation:
-            <div *ngIf="orientation.invalid && (orientation.dirty || orientation.touched)" class="error-message">
-                <div *ngIf="orientation.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="string" id="orientation" [(ngModel)]="model.orientation" name="orientation" #orientation="ngModel"
-            required>
+        <label for="orientation">Orientation: </label>
+        <input type="string" name="orientation" ngModel>
     </div>
     <div class="input-group">
-        <label for="neighborhood">Neighborhood:
-            <div *ngIf="neighborhood.invalid && (neighborhood.dirty || neighborhood.touched)" class="error-message">
-                <div *ngIf="neighborhood.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="string" id="neighborhood" [(ngModel)]="model.neighborhood" name="neighborhood"
-            #neighborhood="ngModel" required>
+        <label for="neighborhood">Neighborhood: </label>
+        <input type="string" name="neighborhood" #neighborhood="ngModel" ngModel required
+            [placeholder]="(neighborhood.touched && neighborhood.invalid && neighborhood.errors?.['required']) ? 'Neighborhood is required' : '' ">
     </div>
     <div class="input-group">
-        <label for="city">City:
-            <div *ngIf="city.invalid && (city.dirty || city.touched)" class="error-message">
-                <div *ngIf="city.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="string" id="city" [(ngModel)]="model.city" name="city" #city="ngModel" required>
+        <label for="city">City: </label>
+        <input type="string" name="city" #city="ngModel" ngModel required
+            [placeholder]="(city.touched && city.invalid && city.errors?.['required']) ? 'City is required' : '' ">
     </div>
     <div class="input-group">
-        <label for="state">State:
-            <div *ngIf="state.invalid && (state.dirty || state.touched)" class="error-message">
-                <div *ngIf="state.errors?.['required']">*required</div>
-            </div>
-        </label>
-        <input type="string" id="state" [(ngModel)]="model.state" name="state" #state="ngModel" required>
+        <label for="state">State: </label>
+        <input type="string" name="state" #state="ngModel" ngModel required
+            [placeholder]="(state.touched && state.invalid && state.errors?.['required']) ? 'State is required' : '' ">
     </div>
-
-
-
-    <button class="submit-form" type="submit" [disabled]="!clientForm.valid"
-        [title]="clientForm.valid ? '' : 'Please fill out all required fields'">Submit</button>
+    <div class="btn-space">
+        <button class="submit-form" type="submit" [disabled]="!clientForm.valid">Submit</button>
+    </div>
 </form>

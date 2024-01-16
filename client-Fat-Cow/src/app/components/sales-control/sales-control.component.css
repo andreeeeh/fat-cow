@@ -1,0 +1,47 @@
+.client-alert {
+    border: 1px solid #ccc;
+    background-color: #dde5dc;
+    border-radius: 8px;
+    padding: 3px;
+    margin-top: 15px;
+}
+
+.alert-title {
+    color: #780000;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+}
+
+.client-info {
+    display: flex;
+}
+
+.personal-info,
+.purchase-info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 3px;
+    padding: 3px;
+}
+
+.personal-info {
+    border-right: 1px solid #ccc;
+    flex: 3;
+}
+
+.purchase-info {
+    border-left: 1px solid #ccc;
+    flex: 2;
+    padding: 5px;
+}
+
+.last-purchase {
+    font-weight: 500;
+    padding: 5px;
+}
+
+.item {
+    display: flex;
+    margin: 10px;
+}

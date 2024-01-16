@@ -16,21 +16,13 @@ export class ClientService {
   allClients = new BehaviorSubject<ClientResult[]>([]);
   allClients$ = this.allClients.asObservable();
 
-  changeClients(clients: Client[]) {
-    this.clients.next(clients)
-  }
-
   getClientResults(id: number): Observable<ClientResult[]> {
     return this.http.get<ClientResult[]>(`http://localhost:3000/client-results/${id}`)
   }
 
-  getAllClientsResults(): void {
+  getOneClientsResults(): void {
     this.http.get<ClientResult[]>(`http://localhost:3000/all-client-results`).subscribe(
-      res => {
-        this.allClients.next(res)
-        console.log(res, this.allClients)
-      }
-    )
+      res => this.allClients.next(res))
   }
 
   addClient(client: Client): void {

@@ -23,16 +23,14 @@ export class ClientComponent implements OnInit {
   filterByClient(id: number): void {
     this.selectedClient = id;
     this.showClient = !this.showClient;
-    this.ClientService.getClientResults(id).subscribe(
-      res => this.clientResults = res.slice()
-    )
-    console.log(this.clientResults)
+    this.ClientService.getClientResults(id).subscribe(res => this.clientResults = res.slice())
   }
 
   deleteOneResult(id: number): void {
     this.ResultService.deleteOneResult(id).subscribe(res => {
-      this.clientResults[0].Result = this.clientResults[0].Result.filter(res => res.id !== id)
-      console.log(res)
+      const updatedResults = [...this.clientResults];
+      updatedResults[0].Result = this.clientResults[0].Result.filter(res => res.id !== id)
+      this.clientResults = updatedResults;
     })
   }
 
