@@ -65,5 +65,14 @@
 
     .menu-item {
         font-size: small;
+        margin-right: 15px;
+    }
+
+    .logo {
+        width: 8%;
+        margin: 0;
+        padding: 0;
+        margin-right: auto;
+        margin-left: 15px;
     }
 }
