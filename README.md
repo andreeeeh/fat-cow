@@ -1,6 +1,6 @@
 # FatCow
 
-Nostos is a web application created to support the sales of nutritional products for cattle from a Brazilian company. It facilitates data visualization of predictions and potential results for customers and organizes sales information for sales assistants.
+FatCow is a web application created to support the sales of nutritional products for cattle from a Brazilian company. It facilitates data visualization of predictions and potential results for customers and organizes sales information for sales assistants.
 
 ## Idea
 
