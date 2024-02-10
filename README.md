@@ -16,13 +16,13 @@ This is what sets FatCow apart:
 
 ## Technologies
 
-[Angular]: https://angular.io/
-[TypeScript]: https://www.typescriptlang.org/
-[Chart.js]: https://www.chartjs.org/
-[Node.js]: https://nodejs.org/en
-[Expressjs]: https://expressjs.com/
-[Postgres]: https://postgresapp.com/
-[Sequelize]: https://sequelize.org/
+[Angular](https://angular.io/)
+[TypeScript](https://www.typescriptlang.org/)
+[Chart.js](https://www.chartjs.org/)
+[Node.js](https://nodejs.org/en)
+[Expressjs](https://expressjs.com/)
+[Postgres](https://postgresapp.com/)
+[Sequelize](https://sequelize.org/)
 
 ## Showcase
 
@@ -30,6 +30,7 @@ This is what sets FatCow apart:
 <img width="963" alt="Screenshot 2024-02-10 at 2 36 03 pm" src="https://github.com/andreeeeh/fat-cow/assets/144232373/01ba39fc-3040-413a-b781-7a873a322685">
 <img width="957" alt="Screenshot 2024-02-10 at 3 19 01 pm" src="https://github.com/andreeeeh/fat-cow/assets/144232373/b74094bd-31b9-457f-bc0c-53894de916d4">
 
+[Youtube Demo](https://youtu.be/FN3KCPdKtjk)
 ## Get started
 
 1. Clone the repository
