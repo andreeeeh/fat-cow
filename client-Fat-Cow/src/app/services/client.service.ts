@@ -32,8 +32,8 @@ export class ClientService {
       res => this.clientResults.next(res))
   }
 
-  addClient(client: Client): void {
-    this.http.post<Client>('http://localhost:3000/add-client', client).subscribe(res => console.log(res))
+  addClient(client: Client): Observable<Client> {
+    return this.http.post<Client>('http://localhost:3000/add-client', client)
   }
 
   deleteOneClient(id: number) {

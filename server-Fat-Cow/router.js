@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { getNutriInfo, deleteOneResult } from './controllers/result.controller.js';
 import { getResultsByClient, addClient, getAllClientsResults, getOnlyClients, deleteOneClient } from './controllers/client.controller.js';
+
 const router = Router();
 
 router.get('/client-results/:id', getResultsByClient);

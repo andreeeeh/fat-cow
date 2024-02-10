@@ -1,0 +1,95 @@
+{
+  "info": [
+    {
+      "prodId": 607860,
+      "name": "Proteinado 30",
+      "variable": 0.001,
+      "wet": 0.5,
+      "dry": 0.3
+    },
+    {
+      "prodId": 866431,
+      "name": "Proteinado Plus",
+      "variable": 0.01,
+      "wet": 0.5,
+      "dry": 0.3
+    },
+    {
+      "prodId": 607851,
+      "name": "Proteinado 40",
+      "variable": 0.01,
+      "wet": 0.5,
+      "dry": 0.3
+    },
+    {
+      "prodId": 607843,
+      "name": "Proteinado 50",
+      "variable": 0.01,
+      "wet": 0.5,
+      "dry": 0.3
+    },
+    {
+      "prodId": 854395,
+      "name": "Energético Plus",
+      "variable": 0.01,
+      "wet": 0.6,
+      "dry": 0.2
+    },
+    {
+      "prodId": 607835,
+      "name": "Energético",
+      "variable": 0.01,
+      "wet": 0.5,
+      "dry": 0
+    },
+    {
+      "prodId": 866431,
+      "name": "Proteinado Plus",
+      "variable": 0.01,
+      "wet": 0.5,
+      "dry": 0.3
+    },
+    {
+      "prodId": 806510,
+      "name": "Águas",
+      "variable": 0.03,
+      "wet": 0.7,
+      "dry": 0.3
+    },
+    {
+      "prodId": 992674,
+      "name": "Secas",
+      "variable": 0.022,
+      "wet": 0.7,
+      "dry": 0.3
+    },
+    {
+      "prodId": 607886,
+      "name": "Altofos 40",
+      "variable": 0.002,
+      "wet": 0.4,
+      "dry": 0
+    },
+    {
+      "prodId": 607908,
+      "name": "Altofos 65",
+      "variable": 0.002,
+      "wet": 0.4,
+      "dry": 0
+    },
+    {
+      "prodId": 607894,
+      "name": "Altofos 90",
+      "variable": 0.002,
+      "wet": 0.4,
+      "dry": 0
+    },
+    {
+      "prodId": 806528,
+      "name": "Reprodução",
+      "variable": 0.002,
+      "wet": 0.4,
+      "dry": 0
+    }
+  ]
+}

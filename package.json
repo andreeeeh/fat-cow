@@ -4,15 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "cd server-Fat-Cow && npm run dev",
+    "dev:client": "cd client-Fat-Cow && ng serve --open"
   },
   "author": "Andre Pangoni",
   "license": "ISC",
-  "dependencies": {
-    "fs": "^0.0.1-security",
-    "path": "^0.12.7",
-    "sequelize": "^6.35.2"
-  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",

@@ -13,8 +13,16 @@ export class NewClientFormComponent {
   @ViewChild('clientForm') clientForm: NgForm = {} as NgForm;
 
   onSubmit() {
-    this.ClientService.addClient(this.clientForm.value)
-    alert('Client Added')
+    this.ClientService.addClient(this.clientForm.value).subscribe({
+      next: (response) => {
+        this.clientForm.reset();
+        alert('Client Added');
+      },
+      error: (err) => {
+        console.error(err);
+        alert('An error occurred while adding the client');
+      }
+    });
   }
 
 }

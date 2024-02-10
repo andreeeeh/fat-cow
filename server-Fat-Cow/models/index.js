@@ -6,12 +6,14 @@ import { fileURLToPath } from 'url';
 import Sequelize from 'sequelize';
 import ResultsModel from './results.model.js';
 import ClientModel from './client.model.js';
-import conf from '../config.js';
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const sequelize = new Sequelize('fat_cow', conf.dbUsername, conf.dbpPassword, {
+const sequelize = new Sequelize('fat_cow', process.env.DBUSERNAME, process.env.DBPASSWORD, {
     host: 'localhost',
     dialect: 'postgres',
 })
@@ -30,9 +32,9 @@ const modelFiles = files.filter(file => file !== 'index.js');
 
 Promise.all(
     modelFiles.map(file =>
-        import(path.join(__dirname, file)).then(module => {
+        import(path.join(__dirname, file)).then(async module => {
             const model = module.default(sequelize, Sequelize.DataTypes);
-            model.sync();
+            await model.sync();
             return model;
         })
     )

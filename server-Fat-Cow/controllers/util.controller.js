@@ -1,8 +1,7 @@
-import conf from "../config.js"
+import products from "../products.json" assert { type: 'json' };
 
 const product = function (info) {
-    let res = conf.product.filter(el => el.prodId == info.prodId)[0]
-    console.log(res)
+    let res = products.info.filter(el => el.prodId == info.prodId)[0]
     return res
 }
 
