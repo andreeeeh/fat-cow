@@ -45,11 +45,11 @@ npm install
 
 3. Configure your environment
    
-# Edit client/.env
+Edit client/.env
 ```
 cp client/.env.example client/.env
 ```
-# Edit server/.env
+Edit server/.env
 ```
 cp server/.env.example server/.env
 ```
