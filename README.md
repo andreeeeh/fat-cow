@@ -20,7 +20,7 @@ This is what sets FatCow apart:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Chart.js](https://www.chartjs.org/)
 - [Node.js](https://nodejs.org/en)
-- [Expressjs](https://expressjs.com/)
+- [Express.js](https://expressjs.com/)
 - [Postgres](https://postgresapp.com/)
 - [Sequelize](https://sequelize.org/)
 
