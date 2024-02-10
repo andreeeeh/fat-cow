@@ -16,13 +16,13 @@ This is what sets FatCow apart:
 
 ## Technologies
 
-[Angular](https://angular.io/)
-[TypeScript](https://www.typescriptlang.org/)
-[Chart.js](https://www.chartjs.org/)
-[Node.js](https://nodejs.org/en)
-[Expressjs](https://expressjs.com/)
-[Postgres](https://postgresapp.com/)
-[Sequelize](https://sequelize.org/)
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Chart.js](https://www.chartjs.org/)
+- [Node.js](https://nodejs.org/en)
+- [Expressjs](https://expressjs.com/)
+- [Postgres](https://postgresapp.com/)
+- [Sequelize](https://sequelize.org/)
 
 ## Showcase
 
