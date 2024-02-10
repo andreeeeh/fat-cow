@@ -62,11 +62,11 @@ cp server/.env.example server/.env
 4. Run the project
 
 From the root folder
-# Starts the client
+Starts the client
 ```
 npm run dev:client
 ```
-# Starts the server
+Starts the server
 ```
 npm run dev:server
 ```
