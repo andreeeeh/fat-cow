@@ -1,6 +1,6 @@
 # FatCow
 
-FatCow is a web application created to support the sales of nutritional products for cattle from a Brazilian company. It facilitates data visualization, predicted weight gain of livestock and profitability for customers. It also organizes data related to the past sales enabling the company to know when it's time to reach the costumer for a new sale. 
+FatCow is a bilingual (eng/port) web application created to support the sales of nutritional products for cattle from a Brazilian company. It facilitates data visualization, predicted weight gain of livestock and profitability for customers. It also organizes data related to the past sales enabling the company to know when it's time to reach the costumer for a new sale. 
 
 ## Idea
 
