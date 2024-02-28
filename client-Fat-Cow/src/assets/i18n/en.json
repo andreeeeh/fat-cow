@@ -37,8 +37,6 @@
     "dailyPerHead": "Daily Consume per Head",
     "dailyTotal": "Daily Consume in Total (Kg/sacks)",
     "periodTotal": "Consume in the Period (Kg/sacks)",
-    "dailyRecommendation": "Daily Recommendation (sacks)",
-    "periodRecommendation": "Recomendation in the Period (sacks every 3 days)",
     "monthlyWeightGain": "Monthly Weight Gain",
     "estimatedWeightGain": "Weight Gain in the Period",
     "finalWeight": "Final Weight",
@@ -49,6 +47,9 @@
     "card3": "Estimated Profit",
     "estimatedProfitPerHead": "Estimated Profit per Head",
     "estimatedProfitTotal": "Estimated Profit in Total",
+    "card4": "Recomendation",
+    "dailyRecommendation": "Daily Recommendation (sacks)",
+    "periodRecommendation": "Recomendation in the Period (sacks every 3 days)",
     "valueInvested": "Value invested in feed",
     "estimatedProfit": "Estimated profit",
     "profitPerspective": "Profit Perspective"

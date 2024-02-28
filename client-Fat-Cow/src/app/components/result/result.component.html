@@ -1,4 +1,4 @@
-<div class="result" *ngIf="result && card1 && card2 && card3">
+<div class="result" *ngIf="result && card1 && card2 && card3 && card4">
     <div class="top-result">
         <h1>Result:</h1>
         <div class="client-info">
@@ -20,6 +20,7 @@
 
     <div class="container">
         <app-result-flip class="box1" [title]="'card1' | translate" [dataItems]="card1"></app-result-flip>
+        <app-result-flip class="box4" [title]="'card4' | translate" [dataItems]="card4"></app-result-flip>
         <app-result-flip class="box2" [title]="'card2' | translate" [dataItems]="card2"></app-result-flip>
         <app-result-flip class="box3" [title]="'card3' | translate" [dataItems]="card3"></app-result-flip>
     </div>

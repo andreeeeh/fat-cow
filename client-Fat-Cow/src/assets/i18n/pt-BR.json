@@ -37,8 +37,6 @@
     "dailyPerHead": "Consumo Diário por Cabeça",
     "dailyTotal": "Consumo Diário do Rebanho (Kg/sacos)",
     "periodTotal": "Consumo no Período (Kg/sacos)",
-    "dailyRecommendation": "Recomendação Diária (sacos)",
-    "periodRecommendation": "Recomendação no Período (sacos a cada 3 dias)",
     "monthlyWeightGain": "Ganho de Peso Mensal",
     "estimatedWeightGain": "Ganho de Peso Estimado no Período",
     "finalWeight": "Peso Final",
@@ -49,6 +47,9 @@
     "card3": "Lucro Estimado",
     "estimatedProfitPerHead": "Lucro Estimado por Cabeça",
     "estimatedProfitTotal": "Total de Lucro Estimado",
+    "card4": "Recomendação",
+    "dailyRecommendation": "Recomendação Diária (sacos)",
+    "periodRecommendation": "Recomendação no Período (sacos a cada 3 dias)",
     "valueInvested": "Valor investido em nutrição",
     "estimatedProfit": "Lucro estimado",
     "profitPerspective": "Perspectiva de Lucro"

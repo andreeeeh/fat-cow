@@ -33,10 +33,10 @@ app-result-flip {
 
 app-result-flip:nth-child(1) {
     grid-column: span 1;
-    grid-row: span 2;
+    grid-row: span 3;
 }
 
-app-result-flip:nth-child(3) {
+app-result-flip:nth-child(4) {
     grid-column: span 1;
     grid-row: span 1;
 }

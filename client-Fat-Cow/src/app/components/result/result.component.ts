@@ -14,13 +14,12 @@ export class ResultComponent {
   card1?: { label: string, value: number | string }[];
   card2?: { label: string, value: number | string }[];
   card3?: { label: string, value: number | string }[];
+  card4?: { label: string, value: number | string }[];
 
   ngOnInit(): void {
     this.ResultService.result$.subscribe(res => {
       this.result = res;
       this.card1 = [
-        { label: 'dailyRecommendation', value: this.result?.dailyRecommendation.toFixed(2) + '' },
-        { label: 'periodRecommendation', value: this.result?.periodRecommendation.toFixed(2) + '' },
         { label: 'DWG', value: this.result?.DWG.toFixed(2) + ' Kg' },
         { label: 'dailyPerHead', value: this.result?.dailyPerHeadWeight.toFixed(2) + ' Kg' },
         { label: 'dailyTotal', value: this.result?.dailyTotalWeight.toFixed(2) + ' / ' + this.result?.dailyTotalPack.toFixed(2) },
@@ -29,6 +28,10 @@ export class ResultComponent {
         { label: 'estimatedWeightGain', value: this.result?.estimatedWeightGain.toFixed(2) + ' Kg' },
         { label: 'finalWeight', value: this.result?.finalWeight.toFixed(2) + ' Kg' },
       ];
+      this.card4 = [
+        { label: 'dailyRecommendation', value: this.result?.dailyRecommendation.toFixed(2) + '' },
+        { label: 'periodRecommendation', value: this.result?.periodRecommendation.toFixed(2) + '' },
+      ]
       this.card2 = [
         { label: 'dailyCost', value: 'R$ ' + this.result?.dailyCost.toFixed(2) },
         { label: 'monthlyCost', value: 'R$ ' + this.result?.monthlyCost.toFixed(2) },
