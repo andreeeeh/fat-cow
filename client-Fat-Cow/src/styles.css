@@ -31,3 +31,9 @@ body {
     max-width: 1050px;
     min-height: 97vh;
 }
+
+@media (max-width: 600px) {
+    #main {
+        padding: 10px;
+    }
+}

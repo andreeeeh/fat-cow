@@ -1,54 +1,54 @@
 <form #nutriForm="ngForm" class="form-group" (ngSubmit)="onSubmit()">
     <div *ngIf="clients" class="input-group client">
-        <label for="client">Client: </label>
+        <label for="client">{{'client' | translate}}: </label>
         <select class="form-control" name="clientId" ngModel required>
-            <option value="" disabled selected>Choose a client</option>
+            <option value="" disabled selected>{{"clientAlert" | translate}}</option>
             <option *ngFor="let client of clients" [value]="client.id">{{client.name}}</option>
         </select>
     </div>
     <div class="input-group">
-        <label for="product">Product: </label>
+        <label for="product">{{'product' | translate}}: </label>
         <select class="form-control" name="prodId" ngModel required>
-            <option value="" disabled selected>Choose a product</option>
+            <option value="" disabled selected>{{'productAlert' | translate}}</option>
             <option *ngFor="let prod of product" [value]="prod.prodId">{{prod.name}}</option>
         </select>
     </div>
     <div class="input-group">
-        <label>Season: </label>
+        <label>{{'season' | translate}}: </label>
         <div class="radio">
             <input type="radio" id="wet" value="wet" name="season" ngModel>
-            <label for="wet">Wet</label>
+            <label for="wet">{{'wet' | translate}}</label>
             <input type="radio" id="dry" value="dry" name="season" ngModel>
-            <label for="dry">Dry</label>
+            <label for="dry">{{'dry' | translate}}</label>
         </div>
     </div>
     <div class="input-group">
-        <label for="period">Period: </label>
+        <label for="period">{{'period' | translate}}: </label>
         <input type="number" name="period" #period="ngModel" ngModel required
-            [placeholder]="(period.touched && period.invalid && period.errors?.['required']) ? 'Specify the average period.' : '' ">
+            [placeholder]="(period.touched && period.invalid && period.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
-        <label for="quantity">Quantity of Animals: </label>
+        <label for="quantity">{{'quantity' | translate}}: </label>
         <input type="number" name="quantity" #quantity="ngModel" ngModel required
-            [placeholder]="(quantity.touched && quantity.invalid && quantity.errors?.['required']) ? 'How many animals will be feed?' : '' ">
+            [placeholder]="(quantity.touched && quantity.invalid && quantity.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
-        <label for="initialWeight">Initial Weight (per Animal): </label>
+        <label for="initialWeight">{{'initialWeight' | translate}}: </label>
         <input type="number" name="initialWeight" #initialWeight=ngModel ngModel required
-            [placeholder]="(initialWeight.touched && initialWeight.invalid && initialWeight.errors?.['required']) ? 'What is the current average weight of the animals?' : '' ">
+            [placeholder]="(initialWeight.touched && initialWeight.invalid && initialWeight.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
-        <label for="priceProduct">Price (per Sack): </label>
+        <label for="priceProduct">{{'priceProduct' | translate}}: </label>
         <input type="number" name="priceProduct" #priceProduct="ngModel" ngModel required
-            [placeholder]="(priceProduct.touched && priceProduct.invalid && priceProduct.errors?.['required']) ? 'Please provide the price.' : '' ">
+            [placeholder]="(priceProduct.touched && priceProduct.invalid && priceProduct.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
-        <label for="priceWeight">Animal Sale Price (per Weight): </label>
+        <label for="priceWeight">{{'priceWeight' | translate}}: </label>
         <input type="number" name="priceWeight" #priceWeight=ngModel ngModel required
-            [placeholder]="(priceWeight.touched && priceWeight.invalid && priceWeight.errors?.['required']) ? 'What is the current price per arroba of cattle?' : '' ">
+            [placeholder]="(priceWeight.touched && priceWeight.invalid && priceWeight.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="btn-space">
-        <button class="submit-form" type="submit" [disabled]="!nutriForm.valid">Submit</button>
+        <button class="submit-form" type="submit" [disabled]="!nutriForm.valid">{{'submit' | translate}}</button>
     </div>
 </form>
 <app-result></app-result>

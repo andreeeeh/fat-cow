@@ -1,54 +1,54 @@
 <form #clientForm="ngForm" class="form-group" (ngSubmit)="onSubmit()">
     <div class="input-group">
-        <label for="name">Name: </label>
+        <label for="name">{{'name' | translate}}: </label>
         <input type="string" name="name" #name="ngModel" ngModel required
-            [placeholder]="(name.touched && name.invalid && name.errors?.['required']) ? 'Name is required' : '' ">
+            [placeholder]="(name.touched && name.invalid && name.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
-        <label for="phone">Phone:</label>
+        <label for="phone">{{'phone' | translate}}:</label>
         <input type="string" name="phone" #phone="ngModel" ngModel required
-            [placeholder]="(phone.touched && phone.invalid && phone.errors?.['required']) ? 'Phone is required' : '' ">
+            [placeholder]="(phone.touched && phone.invalid && phone.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
         <label for="email">E-mail: </label>
         <input type="string" name="email" #email="ngModel" ngModel required
-            [placeholder]="(email.touched && email.invalid && email.errors?.['required']) ? 'E-mail is required' : '' ">
+            [placeholder]="(email.touched && email.invalid && email.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
-        <label for="cep">CEP: </label>
-        <input type="num" name="cep" #cep="ngModel" ngModel required
-            [placeholder]="(cep.touched && cep.invalid && cep.errors?.['required']) ? 'CEP is required' : '' ">
-    </div>
-    <div class="input-group">
-        <label for="street">Street: </label>
+        <label for="street">{{'street' | translate}}: </label>
         <input type="string" name="street" #street="ngModel" ngModel required
-            [placeholder]="(street.touched && street.invalid && street.errors?.['required']) ? 'Street is required' : '' ">
+        [placeholder]="(street.touched && street.invalid && street.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
-        <label for=" num"> Number: </label>
+        <label for=" num"> {{'number' | translate}}: </label>
         <input type="number" name="num" #num="ngModel" ngModel required
-            [placeholder]="(num.touched && num.invalid && num.errors?.['required']) ? 'Number is required' : '' ">
+        [placeholder]="(num.touched && num.invalid && num.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
-        <label for="orientation">Orientation: </label>
+        <label for="neighborhood">{{'neighborhood' | translate}}: </label>
+        <input type="string" name="neighborhood" #neighborhood="ngModel" ngModel required
+        [placeholder]="(neighborhood.touched && neighborhood.invalid && neighborhood.errors?.['required']) ? ['alert' | translate] : '' ">
+    </div>
+    <div class="input-group">
+        <label for="orientation">{{'orientation' | translate}}: </label>
         <input type="string" name="orientation" ngModel>
     </div>
     <div class="input-group">
-        <label for="neighborhood">Neighborhood: </label>
-        <input type="string" name="neighborhood" #neighborhood="ngModel" ngModel required
-            [placeholder]="(neighborhood.touched && neighborhood.invalid && neighborhood.errors?.['required']) ? 'Neighborhood is required' : '' ">
+        <label for="city">{{'city' | translate}}: </label>
+        <input type="string" name="{{'name' | translate}}" #city="ngModel" ngModel required
+        [placeholder]="(city.touched && city.invalid && city.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="input-group">
-        <label for="city">City: </label>
-        <input type="string" name="city" #city="ngModel" ngModel required
-            [placeholder]="(city.touched && city.invalid && city.errors?.['required']) ? 'City is required' : '' ">
-    </div>
-    <div class="input-group">
-        <label for="state">State: </label>
+        <label for="state">{{'state' | translate}}: </label>
         <input type="string" name="state" #state="ngModel" ngModel required
-            [placeholder]="(state.touched && state.invalid && state.errors?.['required']) ? 'State is required' : '' ">
+        [placeholder]="(state.touched && state.invalid && state.errors?.['required']) ? ['alert' | translate] : '' ">
+    </div>
+    <div class="input-group">
+        <label for="cep">{{'postcode' | translate}}: </label>
+        <input type="num" name="cep" #cep="ngModel" ngModel required
+            [placeholder]="(cep.touched && cep.invalid && cep.errors?.['required']) ? ['alert' | translate] : '' ">
     </div>
     <div class="btn-space">
-        <button class="submit-form" type="submit" [disabled]="!clientForm.valid">Submit</button>
+        <button class="submit-form" type="submit" [disabled]="!clientForm.valid">{{'submit' | translate}}</button>
     </div>
 </form>

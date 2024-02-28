@@ -1,13 +1,31 @@
 <div class="fixed-menu">
     <div class="navbar">
-        <img class="logo" src="../../../assets/cow-silhouette-svgrepo-com.svg" alt="FatCow Logo">
-        <div class="menu-item item" routerLink="/client">Client</div>
-        <div class="menu-item item" routerLink="/new-client-form">New Client</div>
-        <div class="menu-item item" routerLink="/new-sale-form">New Sale</div>
-        <div class="menu-item home-menu" routerLink="/">
-            <div class="home"></div>
-            <div class="home"></div>
-            <div class="home"></div>
+        <div class="left">
+            <img class="logo" src="../../../assets/cow-silhouette-svgrepo-com.svg" alt="FatCow Logo">
+            <div class="lang">
+                <div #langEN (click)="ChangeLang(langEN.innerText.toLowerCase())">EN</div>
+                <div class="lang">|</div>
+                <div #langPT (click)="ChangeLang(langPT.innerText.toLowerCase()+'-BR')">PT</div>
+            </div>
+        </div>
+        <div class="right-button">
+            <div class="menu-button" routerLink="/client">{{'client' | translate}}</div>
+            <div class="menu-button" routerLink="/new-client-form">{{'new-client' | translate}}</div>
+            <div class="menu-button" routerLink="/new-sale-form">{{'new-sale' | translate}}</div>
+            <div class="menu-button" routerLink="/">Home</div>
+        </div>
+        <div class="right-menu">
+            <div class="home-dropdown">
+                <div class="home"></div>
+                <div class="home"></div>
+                <div class="home"></div>
+                <div class="dropdown">
+                    <div class="dropdown-item" routerLink="/">Home</div>
+                    <div class="dropdown-item" routerLink="/client">{{'client' | translate}}</div>
+                    <div class="dropdown-item" routerLink="/new-client-form">{{'new-client' | translate}}</div>
+                    <div class="dropdown-item" routerLink="/new-sale-form">{{'new-sale' | translate}}</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

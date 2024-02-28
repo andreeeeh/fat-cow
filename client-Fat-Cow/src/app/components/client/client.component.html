@@ -6,17 +6,17 @@
         </div>
         <ul *ngIf="selectedClient === client.id && showClient && clientResults && clientResults[0]?.Result?.length">
             <div class="client-header">
-                <div class="client-head">Order</div>
-                <div class="client-head">Sacks</div>
-                <div class="client-head">Date</div>
+                <div class="client-head">{{"product" | translate}}</div>
+                <div class="client-head">{{"Sacks" | translate}}</div>
+                <div class="client-head">{{"date"| translate}}</div>
                 <div class="delete"></div>
             </div>
             <li class="client-info" *ngFor="let result of clientResults[0]?.Result">
                 <div class="client-prod">{{result.name}}</div>
                 <div class="client-quantity">{{result.quantity}}</div>
-                <div class="client-date">{{result.createdAt | date: 'mediumDate'}}</div>
+                <div class="client-date">{{result.createdAt | date: 'mediumDate': "": lang}}</div>
                 <dir class="delete">
-                    <button class="delete-btn" (click)="deleteOneResult(result.id)">Delete</button>
+                    <button class="delete-btn" (click)="deleteOneResult(result.id)">{{"delete" | translate}}</button>
                 </dir>
             </li>
             <app-graph class="graph" [clientResults]="clientResults"></app-graph>

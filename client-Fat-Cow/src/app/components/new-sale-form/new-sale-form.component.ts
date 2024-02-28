@@ -43,7 +43,6 @@ export class NewSaleFormComponent {
     this.nutriForm.value.clientId = Number(this.nutriForm.value.clientId);
     this.nutriForm.value.prodId = Number(this.nutriForm.value.prodId);
     this.ResultService.getNutriResult(this.nutriForm.value)
-    // this.nutriForm.resetForm();
   }
 
   addName(): void {

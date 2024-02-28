@@ -5,8 +5,8 @@
         </div>
         <div class="back">
             <div *ngFor="let item of dataItems" class="back-item">
-                <span class="label">{{ item.label }}:</span>
-                <span class="value">{{ item.value }}</span>
+                <span class="label">{{ item.label | translate }}: </span>
+                <span class="value">{{ item.value}}</span>
             </div>
         </div>
     </div>

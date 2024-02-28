@@ -3,6 +3,8 @@ import { Client } from '../../interfaces/client';
 import { ClientService } from '../../services/client.service';
 import { Result } from '../../interfaces/result';
 import { ResultService } from '../../services/result.service';
+import { LanguageService } from '../../services/language.service';
+
 export interface ClientResult extends Client { Result: Result[] }[]
 
 
@@ -12,13 +14,17 @@ export interface ClientResult extends Client { Result: Result[] }[]
   styleUrl: './client.component.css'
 })
 export class ClientComponent implements OnInit {
-
-  constructor(private ClientService: ClientService, private ResultService: ResultService) { }
-
   clients: Client[] = []
   clientResults: ClientResult[] = []
   selectedClient: number = 0;
   showClient: boolean = false;
+  lang = localStorage.getItem('lang') || 'pt-BR'
+
+  constructor(
+    private ClientService: ClientService,
+    private ResultService: ResultService,
+    private languageService: LanguageService
+  ) { }
 
   filterByClient(id: number): void {
     this.selectedClient = id;
@@ -45,6 +51,7 @@ export class ClientComponent implements OnInit {
     this.ClientService.getClientsList();
     this.ClientService.clients$.subscribe(res => this.clients = res)
     this.ClientService.clientResults$.subscribe(res => this.clientResults = res);
+    this.languageService.currentLanguage.subscribe(language => this.lang = language)
   }
 
 }

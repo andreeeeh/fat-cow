@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ClientResult } from '../client/client.component';
 import { ClientService } from '../../services/client.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-sales-control',
@@ -8,12 +9,24 @@ import { ClientService } from '../../services/client.service';
   styleUrl: './sales-control.component.css'
 })
 export class SalesControlComponent {
-
-  constructor(private ClientService: ClientService) { }
-
   allClientResults: ClientResult[] = []
   dueDate?: number | Date
   twoWeeksToDueDate?: number | Date
+  lang = localStorage.getItem('lang') || 'pt-BR'
+
+  constructor(
+    private ClientService: ClientService,
+    private languageService: LanguageService
+  ) { }
+
+  ngOnInit() {
+    this.ClientService.getAllClientsAndResults();
+    this.ClientService.clientResults$.subscribe(res => {
+      this.allClientResults = res;
+      this.allClientResults.map(client => this.lastPurchase(client));
+    })
+    this.languageService.currentLanguage.subscribe(language => this.lang = language)
+  }
 
   lastPurchase(client: ClientResult) {
     let result = null;
@@ -30,11 +43,4 @@ export class SalesControlComponent {
     return result;
   }
 
-  ngOnInit() {
-    this.ClientService.getAllClientsAndResults();
-    this.ClientService.clientResults$.subscribe(res => {
-      this.allClientResults = res;
-      this.allClientResults.map(client => this.lastPurchase(client));
-    })
-  }
 }

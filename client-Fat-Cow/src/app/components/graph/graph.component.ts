@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, ViewChild } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
 import { ClientResult } from '../client/client.component';
 import { BaseChartDirective } from 'ng2-charts';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-graph',
@@ -12,8 +13,7 @@ export class GraphComponent implements OnChanges {
   @Input() clientResults: ClientResult[] = [];
   @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
 
-
-  title = 'ng2-charts-demo';
+  constructor(private translate: TranslateService) { }
 
   public barChartLegend = true;
   public barChartPlugins = [];
@@ -21,8 +21,8 @@ export class GraphComponent implements OnChanges {
   public barChartData: ChartConfiguration<'bar'>['data'] = {
     labels: [],
     datasets: [
-      { data: [], label: 'Value invested in feed', backgroundColor: 'green' },
-      { data: [], label: 'Estimated profit', backgroundColor: 'lightGreen' }
+      { data: [], label: this.translate.instant('valueInvested'), backgroundColor: 'green' },
+      { data: [], label: this.translate.instant('estimatedProfit'), backgroundColor: 'lightGreen' }
     ]
   };
 
@@ -37,13 +37,13 @@ export class GraphComponent implements OnChanges {
 
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         display: true,
         title: {
           display: true,
-          text: 'Products'
+          text: this.translate.instant('product')
         }
       },
       y: {
@@ -61,7 +61,7 @@ export class GraphComponent implements OnChanges {
       },
       title: {
         display: true,
-        text: 'Profit Perspective'
+        text: this.translate.instant('profitPerspective')
       }
     }
 
