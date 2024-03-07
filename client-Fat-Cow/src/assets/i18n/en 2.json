@@ -1,0 +1,10 @@
+{
+    "client": "Client",
+    "new-client": "New Client",
+    "new-sale": "New Sale",
+    "alert-title": "The client's stock will run out soon. Get in touch with them.",
+    "last-purchase": "Last Purchase",
+    "sacks": "sacks",
+    "for": "for",
+    "days": "days"
+}

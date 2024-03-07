@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   }
 
   ChangeLang(lang: string) {
-    alert(lang)
     this.translateService.use(lang)
     this.languageService.changeLanguage(lang)
   }
